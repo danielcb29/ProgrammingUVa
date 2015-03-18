@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class ThreeNPlusOne {
+class main {
     static BufferedReader input;
    
     static StringTokenizer _stk;
@@ -70,7 +70,7 @@ class ThreeNPlusOne {
         //Lectura
         while(readln()!=null)
         {
-				inicial = nextInt();
+                inicial = nextInt();
                 posfinal = nextInt();
                 int mayor = 0;
                 int valor = 0;
@@ -87,11 +87,11 @@ class ThreeNPlusOne {
                 }
                 System.out.println(inicial + " " + posfinal+ " " + mayor);
 
-				
-				
-		}
+                
+                
+        }
 
-		
+        
     }
 }
 
