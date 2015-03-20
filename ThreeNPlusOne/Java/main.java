@@ -1,14 +1,15 @@
 import java.io.*;
 import java.util.*;
 
-class main {
+class Main {
     static BufferedReader input;
    
     static StringTokenizer _stk;
 
-    static int inicial;
+    static int init;
     static int posfinal;
     static int arreglo_valores[];
+
 
     static String readln() throws IOException {
         String l = input.readLine();
@@ -28,68 +29,67 @@ class main {
 
     static int secuence(int n){
         
-        if(arreglo_valores[n - inicial] != 0 ){
-            return arreglo_valores[n- inicial];
-        }else{
+
             int cont = 0;
-            //int conad2 = 0;
+
             while (n!=1){
-                //contad2++;
+
                 cont++;
                 if(n%2 == 0){
                     n = n/2;
-                    if(n >= inicial && n <= posfinal){
-                        if(arreglo_valores[n - inicial] != 0){
-                            //System.out.println("true");
-                            return cont+arreglo_valores[n- inicial];
-                        }
-                    }
+
                     
                 }else{
-                    n = (3*n) + 1;
-                    if(n >= inicial && n <= posfinal){
-                        if(arreglo_valores[n - inicial] != 0){
-                            //System.out.println("true");
-                            return cont+arreglo_valores[n- inicial];
-                        }
-                    }
+                     n = (3*n) + 1;
+
                 }
+
                 
 
             }
             return cont+1;
-        }
+
 
         
     }
+
 
     public static void main(String[] args) throws IOException {
         Locale.setDefault(Locale.US);
         input = new BufferedReader(new InputStreamReader(System.in));
         
         //Lectura
+        Vector<String> salida = new Vector<String>();
+
         while(readln()!=null)
         {
-                inicial = nextInt();
+                init = nextInt();
                 posfinal = nextInt();
-                int mayor = 0;
-                int valor = 0;
-                arreglo_valores = new int[(posfinal-inicial)+1];
-                
-                for(int i = inicial ; i <= posfinal ; i++){ 
+                int heigh = 0;
+                int value = 0;
+                for(int i = init ; i <= posfinal ; i++){ 
                     
-                        valor = secuence(i);
-                        arreglo_valores[i-inicial] = valor; 
-                        mayor = higher(mayor,valor);
+                        value = secuence(i);
+                        heigh = higher(heigh,value);
+
                     
 
 
                 }
-                System.out.println(inicial + " " + posfinal+ " " + mayor);
+
+                salida.add(init + " " + posfinal+ " " + heigh);
+
+
 
                 
                 
         }
+
+        for(int j = 0 ; j < salida.size() - 1; j ++){
+            System.out.println(salida.get(j));
+        }
+        System.out.print(salida.get(salida.size() -1 ));
+
 
         
     }

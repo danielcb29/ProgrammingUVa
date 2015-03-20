@@ -8,8 +8,8 @@ class ThreeNPlusOne {
 
     static int init;
     static int posfinal;
-    //static int arreglo_valores[];
-    static Vector<Integer> values;
+    static int arreglo_valores[];
+    //static Vector<Integer> values;
 
     static String readln() throws IOException {
         String l = input.readLine();
@@ -27,11 +27,11 @@ class ThreeNPlusOne {
         }
     }
 
-    /*static int secuence(int n){
+    static int secuence(int n){
         
-        if(arreglo_valores[n - inicial] != 0 ){
+        /*if(arreglo_valores[n - inicial] != 0 ){
             return arreglo_valores[n- inicial];
-        }else{
+        }else{*/
             //System.out.println("antes de cont");
             int cont = 0;
             //int conad2 = 0;
@@ -42,22 +42,22 @@ class ThreeNPlusOne {
                 if(n%2 == 0){
                     n = n/2;
                     //n = (n-1) / 3;
-                    if(n >= inicial && n <= posfinal){
+                    /*if(n >= inicial && n <= posfinal){
                         if(arreglo_valores[n - inicial] != 0){
                             //System.out.println("Entro, cual fue?: "+(n-inicial)+" y cual es el valor?: "+arreglo_valores[n-inicial]);
                             return cont+arreglo_valores[n- inicial];
                         }
-                    }
+                    }*/
                     
                 }else{
                      n = (3*n) + 1;
                     //n = 2 * n;
-                    if(n >= inicial && n <= posfinal){
+                    /*if(n >= inicial && n <= posfinal){
                         if(arreglo_valores[n - inicial] != 0){
                             //System.out.println("Entro, cual fue?: "+(n-inicial)+" y cual es el valor?: "+arreglo_valores[n-inicial]);
                             return cont+arreglo_valores[n- inicial];
                         }
-                    }
+                    }*/
                 }
                 //System.out.println("afuera del if del while");
                 
@@ -65,12 +65,12 @@ class ThreeNPlusOne {
             }
             //System.out.println("afuera del while");
             return cont+1;
-        }
+        //}
 
         
-    }*/
+    }
 
-    static int secuence(int n){
+    /*static int secuence(int n){
         try{
             int val = values.get(n);
             return val; 
@@ -92,7 +92,7 @@ class ThreeNPlusOne {
 
         }
             
-    }
+    }*/
 
     public static void main(String[] args) throws IOException {
         Locale.setDefault(Locale.US);
@@ -106,16 +106,16 @@ class ThreeNPlusOne {
                 int heigh = 0;
                 int value = 0;
                 //arreglo_valores = new int[(posfinal-inicial)+1];
-                values=new Vector<Integer>();
-                values.add(0,0);
-                values.add(1,0);
+                //values=new Vector<Integer>();
+                //values.add(0,0);
+                //values.add(1,0);
                 for(int i = init ; i <= posfinal ; i++){ 
                     
                         value = secuence(i);
                         //arreglo_valores[i-inicial] = valor; 
-                        values.add(i,value);
+                        //values.add(i,value);
                         heigh = higher(heigh,value);
-                        System.out.println("POR CUAL VAMOS??: "+i);
+                        //System.out.println("POR CUAL VAMOS??: "+i);
                     
 
 
@@ -125,7 +125,7 @@ class ThreeNPlusOne {
 				
 				
 		}
-        System.out.println(0);
+        
 
         //values.add(49,90);
         //System.out.println("hola");
