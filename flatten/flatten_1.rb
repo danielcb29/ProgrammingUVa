@@ -1,10 +1,9 @@
 #flatten.rb
 
 def flatten(array)
-
-	if array.empty? 
-		[]
-	else
+  if array.empty?
+    []
+  else
     out=[]
     array.each do |value|
       if value.kind_of?(Array)
@@ -15,10 +14,10 @@ def flatten(array)
         out.push(value)
       end
     end
-		out
-	end
+    out
+  end
 end
 
-#puts flatten([[1,2,3],[],['a','p']])
-puts flatten([1,2,3])
+puts flatten([[1,2,3],[],['a','p']])
+puts flatten([1, 2, 3])
 puts flatten([])
