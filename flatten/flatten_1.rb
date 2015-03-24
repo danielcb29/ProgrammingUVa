@@ -7,9 +7,7 @@ def flatten(array)
     out=[]
     array.each do |value|
       if value.kind_of?(Array)
-        value.each do |newval|
-          out.push(newval)
-        end
+        out.push(flatten(value))
       else
         out.push(value)
       end
